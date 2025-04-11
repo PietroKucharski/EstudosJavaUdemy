@@ -327,7 +327,7 @@ public class Programa13 {
             igual a 6.0 (seis).
         */
 
-        System.out.print("Quantos alunos serão digitados? ");
+        /* System.out.print("Quantos alunos serão digitados? ");
         int n = sc.nextInt();
 
         String[] nomes = new String[n];
@@ -348,6 +348,61 @@ public class Programa13 {
             if((primeiraNota[i] + segundaNota[i]) / 2 >= 6.0) {
                 System.out.printf("%s \n", nomes[i]);
             }
+        }*/
+
+        /*
+        Exercício 11 - dados_pessoas
+             Tem-se um conjunto de dados contendo a altura e o gênero (M, F) de N pessoas. Fazer um programa
+             que calcule e escreva a maior e a menor altura do grupo, a média de altura das mulheres, e o número
+             de homens
+        */
+
+        System.out.print("Quantas pessoas serao digitadas? ");
+        int n = sc.nextInt();
+
+        double[] altura = new double[n];
+        char[] genero = new char[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.printf("Altura da %da pessoa: ", i + 1);
+            altura[i] = sc.nextDouble();
+            sc.nextLine();
+
+            System.out.printf("Gênero da %da pessoa: ", i + 1);
+            genero[i] = sc.next().charAt(0);
         }
+
+        double menorAltura = altura[0];
+        double maiorAltura = altura[0];
+
+        for (int i = 0; i < n; i++) {
+            if (altura[i] < menorAltura) {
+                menorAltura = altura[i];
+            } else if (altura[i] > maiorAltura) {
+                maiorAltura = altura[i];
+            }
+        }
+
+        double somaAlturasMulheres = 0.0;
+
+        int qtdMulheresTotais = 0;
+        int qtdHomensTotais = 0;
+
+
+        for (int i = 0; i < n; i++) {
+            if (genero[i] == 'M') {
+                qtdHomensTotais++;
+            } else {
+                somaAlturasMulheres += altura[i];
+                qtdMulheresTotais++;
+            }
+        }
+
+        double mediaAlturaMulheres = somaAlturasMulheres / qtdMulheresTotais;
+
+        System.out.printf("Menor altura = %.2f\n", menorAltura);
+        System.out.printf("Maior altura = %.2f\n", maiorAltura);
+        System.out.printf("Media das alturas das mulheres = %.2f\n", mediaAlturaMulheres);
+        System.out.printf("Numero de homens = %d\n", qtdHomensTotais);
     }
 }
