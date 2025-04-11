@@ -253,7 +253,7 @@ public class Programa13 {
             digitado, mostrar a mensagem "NENHUM NUMERO PAR"
         */
 
-        System.out.print("Quantos elementos vai ter o vetor? ");
+        /*System.out.print("Quantos elementos vai ter o vetor? ");
         int n = sc.nextInt();
 
         int[] vetor = new int[n];
@@ -280,8 +280,43 @@ public class Programa13 {
             double mediaPares = (double) somaValoresPares / numerosPares;
 
             System.out.printf("MEDIA DOS PARES = %.1f", mediaPares);
+        }*/
+
+        /*
+        Exercício 09 - mais_velho
+            Fazer um programa para ler um conjunto de nomes de pessoas e suas respectivas idades. Os nomes
+            devem ser armazenados em um vetor, e as idades em um outro vetor. Depois, mostrar na tela o nome
+            da pessoa mais velha
+        */
+
+        System.out.print("Quantas pessoas você vai digitar? ");
+        int n = sc.nextInt();
+
+        String[] nome = new String[n];
+        int[] idade = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.printf("Dados da %da pessoa:\n", i + 1);
+
+            System.out.print("Nome: ");
+            nome[i] = sc.next();
+
+            System.out.print("Idade: ");
+            idade[i] = sc.nextInt();
         }
 
+        int idadeMaior = idade[0];
+        int indicePessoaMaisVelha = 0;
 
+
+        for (int i = 0; i > n; i++) {
+            if (idade[i] < idadeMaior) {
+                idadeMaior = idade[i];
+                indicePessoaMaisVelha = i;
+            }
+
+        }
+
+        System.out.printf("PESSOA MAIS VELHA: %s", nome[indicePessoaMaisVelha]);
     }
 }
