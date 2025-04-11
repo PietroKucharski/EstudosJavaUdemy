@@ -223,7 +223,7 @@ public class Programa13 {
             considerando a primeira posição como 0 (zero).
         */
 
-        System.out.print("Quantos numeros voce vai digitar? ");
+        /* System.out.print("Quantos numeros voce vai digitar? ");
         int n = sc.nextInt();
 
         double[] vetor = new double[n];
@@ -244,6 +244,44 @@ public class Programa13 {
         }
 
         System.out.printf("MAIOR VALOR = %.1f\n", maiorValor);
-        System.out.print("POSICAO DO MAIOR VALOR = " + posicaoMaiorValor);
+        System.out.print("POSICAO DO MAIOR VALOR = " + posicaoMaiorValor);*/
+
+        /*
+        Exercício 08 - media_pares
+            Fazer um programa para ler um vetor de N números inteiros. Em seguida, mostrar na tela a média
+            aritmética somente dos números pares lidos, com uma casa decimal. Se nenhum número par for
+            digitado, mostrar a mensagem "NENHUM NUMERO PAR"
+        */
+
+        System.out.print("Quantos elementos vai ter o vetor? ");
+        int n = sc.nextInt();
+
+        int[] vetor = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Digite um numero: ");
+            vetor[i] = sc.nextInt();
+        }
+
+        int somaValoresPares = 0;
+        int numerosPares = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            if (vetor[i] % 2 == 0) {
+                somaValoresPares += vetor[i];
+                numerosPares++;
+            }
+        }
+
+        if (numerosPares == 0) {
+            System.out.println("NENHUM NUMERO PAR");
+        } else {
+            double mediaPares = (double) somaValoresPares / numerosPares;
+
+            System.out.printf("MEDIA DOS PARES = %.1f", mediaPares);
+        }
+
+
     }
 }
