@@ -188,7 +188,8 @@ public class Programa13 {
             mostrar na tela a média aritmética de todos elementos com três casas decimais. Depois mostrar todos
             os elementos do vetor que estejam abaixo da média, com uma casa decimal cada.
         */
-        System.out.print("Quantos elementos vai ter o vetor? ");
+
+        /* System.out.print("Quantos elementos vai ter o vetor? ");
         int n = sc.nextInt();
 
         double[] numeros = new double[n];
@@ -213,6 +214,36 @@ public class Programa13 {
             if(numeros[i] < media) {
                 System.out.printf("%.1f\n", numeros[i]);
             }
+        }*/
+
+        /*
+        Exercício 07 - maior_posicao
+            Faça um programa que leia N números reais e armazene-os em um vetor. Em seguida, mostrar na tela
+            o maior número do vetor (supor não haver empates). Mostrar também a posição do maior elemento,
+            considerando a primeira posição como 0 (zero).
+        */
+
+        System.out.print("Quantos numeros voce vai digitar? ");
+        int n = sc.nextInt();
+
+        double[] vetor = new double[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Digite um numero: ");
+            vetor[i] = sc.nextDouble();
         }
+
+        double maiorValor = vetor[0];
+        int posicaoMaiorValor = 0;
+
+        for (int i = 1; i < n; i++) {
+            if(vetor[i] > maiorValor) {
+                maiorValor = vetor[i];
+                posicaoMaiorValor = i;
+            }
+        }
+
+        System.out.printf("MAIOR VALOR = %.1f\n", maiorValor);
+        System.out.print("POSICAO DO MAIOR VALOR = " + posicaoMaiorValor);
     }
 }
