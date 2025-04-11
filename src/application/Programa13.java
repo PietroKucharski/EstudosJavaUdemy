@@ -10,8 +10,8 @@ public class Programa13 {
 
         /*
         Exercicio 01
-        Faça um programa que leia um número inteiro positivo N (máximo = 10) e depois N números inteiros
-        e armazene-os em um vetor. Em seguida, mostrar na tela todos os números negativos lidos.
+            Faça um programa que leia um número inteiro positivo N (máximo = 10) e depois N números inteiros
+            e armazene-os em um vetor. Em seguida, mostrar na tela todos os números negativos lidos.
         */
 
         /*
@@ -36,9 +36,9 @@ public class Programa13 {
 
         /*
         Exercicio 02
-        Faça um programa que leia N números reais e armazene-os em um vetor. Em seguida:
-        - Imprimir todos os elementos do vetor
-        - Mostrar na tela a soma e a média dos elementos do vetor
+            Faça um programa que leia N números reais e armazene-os em um vetor. Em seguida:
+            - Imprimir todos os elementos do vetor
+            - Mostrar na tela a soma e a média dos elementos do vetor
         */
 
         /*
@@ -68,9 +68,9 @@ public class Programa13 {
 
         /*
         Exercicio 03
-        Fazer um programa para ler nome, idade e altura de N pessoas, conforme exemplo. Depois, mostrar na
-        tela a altura média das pessoas, e mostrar também a porcentagem de pessoas com menos de 16 anos,
-        bem como os nomes dessas pessoas caso houver
+            Fazer um programa para ler nome, idade e altura de N pessoas, conforme exemplo. Depois, mostrar na
+            tela a altura média das pessoas, e mostrar também a porcentagem de pessoas com menos de 16 anos,
+            bem como os nomes dessas pessoas caso houver
         */
 
         /*System.out.print("Quantas pessoas serao digitadas? ");
@@ -123,11 +123,11 @@ public class Programa13 {
 
         /*
         Exercicio 04
-        Faça um programa que leia N números inteiros e armazene-os em um vetor. Em seguida, mostre na
-        tela todos os números pares, e também a quantidade de números pares.
+            Faça um programa que leia N números inteiros e armazene-os em um vetor. Em seguida, mostre na
+            tela todos os números pares, e também a quantidade de números pares.
         */
 
-        System.out.print("Quantos numeros voce vai digitar? ");
+        /* System.out.print("Quantos numeros voce vai digitar? ");
         int n = sc.nextInt();
         int[] vetor = new int[n];
 
@@ -147,6 +147,38 @@ public class Programa13 {
             }
         }
 
-        System.out.println("\nQUANTIDADE DE PARES = " + qtdPares);
+        System.out.println("\nQUANTIDADE DE PARES = " + qtdPares);*/
+
+        /*
+        Exercicio 05
+            Faça um programa para ler dois vetores A e B, contendo N elementos cada. Em seguida, gere um
+            terceiro vetor C onde cada elemento de C é a soma dos elementos correspondentes de A e B. Imprima
+            o vetor C gerado.
+        */
+        System.out.print("Quantos valores vai ter cada vetor? ");
+        int n = sc.nextInt();
+
+        int[] vetorA = new int[n];
+        int[] vetorB = new int[n];
+        int[] vetorC = new int[n];
+
+        System.out.println("Digite os valores do vetor A: ");
+        for (int i = 0; i < n; i++) {
+            vetorA[i] = sc.nextInt();
+        }
+
+        System.out.println("Digite os valores do vetor B: ");
+        for (int i = 0; i < n; i++) {
+            vetorB[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < n; i++) {
+            vetorC[i] = vetorA[i] + vetorB[i];
+        }
+
+        System.out.println("VETOR RESULTANTE:");
+        for (int i = 0; i < n; i++) {
+            System.out.printf("%d  \n", vetorC[i]);
+        }
     }
 }
