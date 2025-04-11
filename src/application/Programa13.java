@@ -73,7 +73,7 @@ public class Programa13 {
         bem como os nomes dessas pessoas caso houver
         */
 
-        System.out.print("Quantas pessoas serao digitadas? ");
+        /*System.out.print("Quantas pessoas serao digitadas? ");
         int n = sc.nextInt();
 
         String[] name = new String[n];
@@ -119,6 +119,34 @@ public class Programa13 {
             if (idade[i] < 16) {
                 System.out.printf("%s\n", name[i]);
             }
+        }*/
+
+        /*
+        Exercicio 04
+        Faça um programa que leia N números inteiros e armazene-os em um vetor. Em seguida, mostre na
+        tela todos os números pares, e também a quantidade de números pares.
+        */
+
+        System.out.print("Quantos numeros voce vai digitar? ");
+        int n = sc.nextInt();
+        int[] vetor = new int[n];
+
+        int qtdPares = 0;
+
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print("Digite um numero: ");
+            vetor[i] = sc.nextInt();
         }
+
+        System.out.println("\nNUMEROS PARES:");
+
+        for (int i = 0; i < n; i++) {
+            if (vetor[i] % 2 == 0) {
+                System.out.printf("%d  ", vetor[i]);
+                qtdPares++;
+            }
+        }
+
+        System.out.println("\nQUANTIDADE DE PARES = " + qtdPares);
     }
 }
