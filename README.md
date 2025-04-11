@@ -1,7 +1,5 @@
 # Estudos do curso de Java da Udemy ☕
 
----
-
 ## O que vou/estou aprendendo com este curso 📚
 
 - Lógica de programação
@@ -16,7 +14,6 @@
 - Manipulação de arquivos
 - UML: compreensão de diagramas de classe
 
----
 ## Ferramentas e Frameworks utilizados 🛠️
 
 - JDBC: acesso a dados com SQL
