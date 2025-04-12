@@ -51,7 +51,7 @@ public class Programa17 {
         int id = sc.nextInt();
         Employee02 result = listEmployees.stream().filter(employee02 -> employee02.getId() == id).findFirst().orElse(null);
 
-        if(result == null) {
+        if (result == null) {
             System.out.println("This id does not exist!");
             System.out.println("List of employees:");
 
@@ -67,8 +67,5 @@ public class Programa17 {
                 System.out.println(listEmployee);
             }
         }
-
-
-
     }
 }
