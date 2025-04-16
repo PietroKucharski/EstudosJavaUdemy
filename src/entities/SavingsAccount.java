@@ -1,6 +1,6 @@
 package entities;
 
-public class SavingsAccount extends Account02 {
+public class SavingsAccount extends Account02 { // A palavra reservada final faz com que não posssam herdar (extends) essa classe
     private Double interestRate;
 
     public SavingsAccount() {
@@ -25,7 +25,7 @@ public class SavingsAccount extends Account02 {
     }
 
     @Override
-    public void withdraw(double amount) {
+    public void withdraw(double amount) { // A palavra reservada final faz com que o metodo não seja sobrescrito
         balance -= amount;
     }
 }
