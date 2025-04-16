@@ -3,17 +3,22 @@ package entities;
 import entities.enums.OrderStatus02;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order02 {
+    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
     private LocalDateTime moment;
     private OrderStatus02 status;
-    private List<OrderItem> itens = new ArrayList<>();
+    private Client client;
+    private List<OrderItem> items = new ArrayList<>();
 
-    public Order02(LocalDateTime moment, OrderStatus02 status) {
+    public Order02(LocalDateTime moment, OrderStatus02 status, Client client) {
         this.moment = moment;
         this.status = status;
+        this.client = client;
     }
 
     public LocalDateTime getMoment() {
@@ -32,26 +37,47 @@ public class Order02 {
         this.status = status;
     }
 
-    public List<OrderItem> getItens() {
-        return itens;
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public void addItem(OrderItem item) {
-        itens.add(item);
+        items.add(item);
     }
 
     public void removeItem(OrderItem item) {
-        itens.remove(item);
+        items.remove(item);
     }
 
     public double total() {
         double total = 0.0;
 
-        for (OrderItem item : itens) {
+        for (OrderItem item : items) {
             total += item.subTotal();
         }
 
         return total;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Order moment: ");
+        sb.append(moment.format(dtf)).append("\n");
+        sb.append("Order status: ").append(status).append("\n");
+        sb.append("Client: ").append(client).append("\n");
+        sb.append("Order items: ").append("\n");
+
+        for (OrderItem item : items) {
+            sb.append(item).append("\n");
+        }
+        sb.append("Total price: $").append(String.format("%.2f", total()));
+
+        return sb.toString();
+    }
 }

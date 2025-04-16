@@ -43,7 +43,7 @@ public class Programa27 {
         System.out.print("How many items to this order? ");
         int orders = sc.nextInt();
 
-        Order02 order = new Order02(LocalDateTime.now(), OrderStatus02.valueOf(orderStatus));
+        Order02 order = new Order02(LocalDateTime.now(), OrderStatus02.valueOf(orderStatus), client);
 
         for (int i = 0; i < orders; i++) {
             sc.nextLine();
@@ -64,14 +64,6 @@ public class Programa27 {
             order.addItem(item);
         }
 
-        System.out.println("ORDER SUMMARY:");
-        System.out.print("Order moment: " + order.getMoment().format(dtf));
-        System.out.print("\nOrder status: " + order.getStatus() + "\n");
-        System.out.print("Client: " + client);
-        System.out.print("\nOrder items:\n");
-        for (OrderItem item : order.getItens()) {
-            System.out.println(item);
-        }
-        System.out.printf("Total price: $%.2f", order.total());
+        System.out.println(order);
     }
 }
